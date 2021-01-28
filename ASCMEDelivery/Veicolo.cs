@@ -63,6 +63,11 @@ namespace ASCMEDelivery
             return annoImmatricolazione.ToString() + targa.Substring(5) + codiceIdentificativo++.ToString();
         }
 
+        /// <summary>
+        /// Controllo se il carattere è una lettera
+        /// </summary>
+        /// <param name="c">carattere da controllare</param>
+        /// <returns></returns>
         private bool ControlloStringa(char c)
         {
             if (c > 'A' && c < 'Z')
@@ -71,6 +76,11 @@ namespace ASCMEDelivery
                 return false;
         }
 
+        /// <summary>
+        /// Controllo se il carattere è una cifra
+        /// </summary>
+        /// <param name="c">Carattere da controllare</param>
+        /// <returns></returns>
         private bool ControlloNumero(char c)
         {
             if (int.TryParse(Convert.ToString(c), out int n))
@@ -81,6 +91,12 @@ namespace ASCMEDelivery
                 return false;
         }
 
+        /// <summary>
+        /// Restituisce il costo di un viaggio
+        /// </summary>
+        /// <param name="kmPercorsi">Lunghezza del viaggio in chilometri</param>
+        /// <param name="prezzoBenzina">Prezzo della benzina per il viaggio</param>
+        /// <returns></returns>
         public double CostoViaggio(double kmPercorsi, double prezzoBenzina)
         {
             this.kmPercorsi += kmPercorsi;
@@ -135,7 +151,7 @@ namespace ASCMEDelivery
                 this.annoImmatricolazione = value;
             }
         }
-        //(string marca, string modello, string targa, int annoImmatricolazione, double kmPercorsiAlLitro, double kmPercorsi)
+
         public double KmPercorsi
         {
             get
